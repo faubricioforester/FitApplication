@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">FitApplication</string>
+    <string name="Username">Nombre de usuario</string>
+    <string name="Password">Contraseña</string>
+    <string name="Log">Ingresar</string>
+    <string name="Register" />
+    <string name="RegisterU">Registrarse</string>
+    <string name="MyProfileString">Mi Perfil</string>
+    <string name="CommunityString">Comunidad</string>
+    <string name="SavedString">Guardado</string>
+    <string name="SearchString">Buscar</string>
+    <string name="MyTrainerString">Mi entrenador</string>
+    <string name="StatisticsString">Estadísticas</string>
+    <string name="ExitString">Salir</string>
+    <string name="RegistroString">Registro</string>
+    <string name="UsernameString">Nombre de usuario</string>
+    <string name="PasswordString">Contraseña</string>
+    <string name="BioString">Biografía</string>
+    <string name="NameString">Nombre</string>
+    <string name="EmailString">Correo electrónico</string>
+    <string name="PhoneNumberString">Número de telefono</string>
+    <string name="RegisterString">Registrarse</string>
+    <string name="RoutineString">Rutina</string>
+    <string name="DescriptionString">Descripción</string>
+    <string name="ExerciseString">Ejercicio</string>
+    <string name="WeightString">Peso</string>
+    <string name="RepetitionsString">Repeticiones</string>
+</resources>
