@@ -61,8 +61,6 @@ public class MainActivity extends AppCompatActivity {
                                     String message = respReq.getString("message");
 
                                     if(message == "OK"){
-
-                                    } else{
                                         //If the LogIn is correct.
                                         //Save log info to sharedPreferences
                                         SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
@@ -73,18 +71,17 @@ public class MainActivity extends AppCompatActivity {
                                         Intent intent = new Intent(MainActivity.this, MenuActivity.class  );
                                         MainActivity.this.startActivity(intent);
 
-                                    }
+                                    } else{
 
+                                    }
                                 }catch (JSONException jsone){
                                     //Show error in login in.
-
                                 }
-
                             }
                         }, new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        Log.e("Error On LoginJSON","That didn't work!");
+                        Log.e("Error On Login","That didn't work!");
                     }
                 }) {
                     //adding parameters to the request
@@ -104,7 +101,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     public void onRegisterButtonClick(View v){
-        Intent intent = new Intent(MainActivity.this, MenuActivity.class  );
+        Intent intent = new Intent(MainActivity.this, RegisterActivity.class  );
         MainActivity.this.startActivity(intent);
 
     }

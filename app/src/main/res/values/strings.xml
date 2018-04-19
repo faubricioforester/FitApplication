@@ -25,4 +25,7 @@
     <string name="ExerciseString">Ejercicio</string>
     <string name="WeightString">Peso</string>
     <string name="RepetitionsString">Repeticiones</string>
+    <string name="SearchTerm">Valor</string>
+    <string name="Gym">Gimnasio</string>
+    <string name="Trainer">Entrenador</string>
 </resources>
