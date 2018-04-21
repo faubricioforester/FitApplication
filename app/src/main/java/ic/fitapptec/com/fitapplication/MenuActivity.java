@@ -1,11 +1,33 @@
 package ic.fitapptec.com.fitapplication;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
+import android.widget.TextView;
+
+import com.android.volley.AuthFailureError;
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import static ic.fitapptec.com.fitapplication.MainActivity.PREFS_NAME;
 
 public class MenuActivity extends AppCompatActivity {
+    SharedPreferences pref;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -14,14 +36,26 @@ public class MenuActivity extends AppCompatActivity {
     }
 
     public void onMyProfileButtonClick(View v){
-        Intent intent = new Intent(MenuActivity.this, MyProfileActivity.class  );
+        pref = getSharedPreferences(PREFS_NAME, 0);
+
+        Intent intent = new Intent(MenuActivity.this, ProfileActivity.class  );
+        intent.putExtra("PROFILE_TYPE", "USER");
+        intent.putExtra("PROFILE_OWNER_ID", pref.getString("id",""));
+        intent.putExtra("USER_NAME", pref.getString("name",""));
+        intent.putExtra("USER_BIO", pref.getString("bio",""));
+        intent.putExtra("USER_EMAIL", pref.getString("correo",""));
+        intent.putExtra("USER_PHONE", pref.getString("telefono",""));
         MenuActivity.this.startActivity(intent);
+
+
 
     }
 
     public void onCommunityButtonClick(View v){
         Intent intent = new Intent(MenuActivity.this, CommunityActivity.class  );
+
         MenuActivity.this.startActivity(intent);
+
 
     }
 

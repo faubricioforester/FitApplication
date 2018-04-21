@@ -42,6 +42,13 @@
             android:layout_height="wrap_content"
             android:text="@string/Log" />
 
+        <TextView
+            android:id="@+id/textViewLoginError"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/LoginError"
+            android:visibility="invisible" />
+
         <Space
             android:layout_width="match_parent"
             android:layout_height="296dp" />

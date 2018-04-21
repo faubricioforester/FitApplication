@@ -15,42 +15,49 @@
             android:id="@+id/buttonProfile"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:onClick="onMyProfileButtonClick"
             android:text="@string/MyProfileString" />
 
         <Button
             android:id="@+id/buttonCommunity"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:onClick="onCommunityButtonClick"
             android:text="@string/CommunityString" />
 
         <Button
             android:id="@+id/buttonSaved"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:onClick="onSavedButtonClick"
             android:text="@string/SavedString" />
 
         <Button
             android:id="@+id/buttonSearch"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:onClick="onSearchButtonClick"
             android:text="@string/SearchString" />
 
         <Button
             android:id="@+id/buttonTrainer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:onClick="onMyTrainerButtonClick"
             android:text="@string/MyTrainerString" />
 
         <Button
             android:id="@+id/buttonStatistics"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:onClick="onStatisticsButtonClick"
             android:text="@string/StatisticsString" />
 
         <Button
             android:id="@+id/buttonSalir"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:onClick="onExitButtonClick"
             android:text="@string/ExitString" />
     </LinearLayout>
 

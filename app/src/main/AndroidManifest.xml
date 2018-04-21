@@ -25,7 +25,8 @@
         <activity android:name=".SavedActivity" />
         <activity android:name=".SearchActivity" />
         <activity android:name=".MyTrainerActivity" />
-        <activity android:name=".StatisticActivity"></activity>
+        <activity android:name=".StatisticActivity" />
+        <activity android:name=".ProfileActivity"></activity>
     </application>
 
 </manifest>
