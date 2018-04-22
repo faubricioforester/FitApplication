@@ -7,9 +7,13 @@
     tools:context=".MenuActivity">
 
     <LinearLayout
-        android:layout_width="match_parent"
+        android:id="@+id/linearLayout6"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:orientation="vertical" >
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <Button
             android:id="@+id/buttonProfile"
@@ -24,6 +28,13 @@
             android:layout_height="wrap_content"
             android:onClick="onCommunityButtonClick"
             android:text="@string/CommunityString" />
+
+        <Button
+            android:id="@+id/buttonWorkoutRoutines"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="onMyWorkoutRoutinesClick"
+            android:text="@string/WorkoutRoutines" />
 
         <Button
             android:id="@+id/buttonSaved"

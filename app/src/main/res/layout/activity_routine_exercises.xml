@@ -4,10 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SavedActivity">
+    tools:context=".RoutineExercisesActivity">
 
     <ScrollView
-        android:id="@+id/scrollView5"
+        android:id="@+id/scrollView7"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginBottom="8dp"
@@ -20,7 +20,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
-            android:id="@+id/linearLayoutSavedPost"
+            android:id="@+id/linearLayoutRoutineExercises"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical" />

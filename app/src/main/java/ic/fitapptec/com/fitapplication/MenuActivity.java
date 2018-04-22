@@ -88,4 +88,10 @@ public class MenuActivity extends AppCompatActivity {
         MenuActivity.this.startActivity(intent);
 
     }
+
+    public void onMyWorkoutRoutinesClick(View v){
+
+        Intent intent = new Intent(MenuActivity.this, MyWorkoutRoutinesActivity.class);
+        MenuActivity.this.startActivity(intent);
+    }
 }

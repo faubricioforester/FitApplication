@@ -1,5 +1,6 @@
 package ic.fitapptec.com.fitapplication;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -66,21 +67,44 @@ public class CommunityActivity extends AppCompatActivity {
                                 //Save info to SharedPreferences
                                 JSONArray arr = respReq.getJSONArray("listaDatos");
 
-                                for(int i = 0; i < arr.length(); i++){
-                                    String id = arr.getJSONObject(i).getString("idComunidad");
-                                    String nombre = arr.getJSONObject(i).getString("nombreComunidad");
-                                    String desc = arr.getJSONObject(i).getString("decripcionComunidad");
-                                    String entre = arr.getJSONObject(i).getString("idEntrenador");
+                                if(arr.length()<=0){
+                                    TextView noCommu = new TextView(CommunityActivity.this);
+                                    String contenido = "No perteneces a ninguna comunidad";
+                                    noCommu.setText(contenido);
+                                    noCommu.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
 
-                                    TextView searchResult = new TextView(CommunityActivity.this);
-                                    String displayString = nombre + System.getProperty("line.separator") + desc + System.getProperty("line.separator") + entre
-                                             + System.getProperty("line.separator");
+                                    ((LinearLayout) linearLayout).addView(noCommu);
+                                } else {
+                                    for(int i = 0; i < arr.length(); i++){
+                                        final String id = arr.getJSONObject(i).getString("idComunidad");
+                                        String nombre = arr.getJSONObject(i).getString("nombreComunidad");
+                                        String desc = arr.getJSONObject(i).getString("decripcionComunidad");
+                                        String entre = arr.getJSONObject(i).getString("idEntrenador");
 
-                                    searchResult.setText(displayString);
-                                    searchResult.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
+                                        TextView searchResult = new TextView(CommunityActivity.this);
+                                        String displayString = nombre + System.getProperty("line.separator") + desc + System.getProperty("line.separator") + entre
+                                                + System.getProperty("line.separator");
 
-                                    ((LinearLayout) linearLayout).addView(searchResult);
+                                        searchResult.setText(displayString);
+                                        searchResult.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
+
+                                        searchResult.setOnClickListener(new View.OnClickListener() {
+                                            @Override
+                                            public void onClick(View v) {
+
+                                                Intent intent = new Intent(CommunityActivity.this, CommunityWallActivity.class);
+                                                intent.putExtra("COMMUNITY_ID", id);
+                                                CommunityActivity.this.startActivity(intent);
+
+
+                                            }
+                                        });
+
+                                        ((LinearLayout) linearLayout).addView(searchResult);
+                                    }
                                 }
+
+
 
                             } else{
 
@@ -94,7 +118,7 @@ public class CommunityActivity extends AppCompatActivity {
                 }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                Log.e("Error On Login","That didn't work!");
+                Log.e("Error Communities","That didn't work!");
             }
         }) {
             //adding parameters to the request
@@ -102,7 +126,7 @@ public class CommunityActivity extends AppCompatActivity {
             protected Map<String, String> getParams() throws AuthFailureError {
                 SharedPreferences pref = getSharedPreferences(PREFS_NAME, 0);
                 Map<String, String> params = new HashMap<>();
-                params.put("id", pref.getString("id", ""));
+                params.put("idUser", pref.getString("id", ""));
                 return params;
             }
         };
